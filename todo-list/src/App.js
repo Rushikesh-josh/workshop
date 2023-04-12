@@ -15,9 +15,12 @@ function App() {
     const newTodos = todos.filter(list => list.id !== id)
     setTodos(newTodos)
   }
+  const handleRefreshClick = () => {
+    window.location.reload();
+  }
   return (
     <div className="App d-flex justify-content-center">
-      <ListComponent todolist={todos} header={header} handleClick={handleClick}/>
+      <ListComponent todolist={todos} header={header} handleClick={handleClick} handleRefreshClick={handleRefreshClick}/>
     </div>
   );
 }
