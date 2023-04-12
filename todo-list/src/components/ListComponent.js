@@ -1,11 +1,11 @@
-import Button from "./button";
+import Button from "./Button";
 
-const ListComponent = ({todolist, header, handleClick, handleRefreshClick}) => {
+const ListComponent = (props) => {
+    const {todolist, header, deleteClick} = props
     return ( 
         <div>
             <h1 className="pb-2 mt-4">{header}</h1>
             {
-                todolist.length ?
                 todolist.map(list => {
                     return(
                         <div key={list.id} className="p-4 mb-3 border ">
@@ -23,18 +23,10 @@ const ListComponent = ({todolist, header, handleClick, handleRefreshClick}) => {
                                     <p className="ps-1">{list.description}</p>
                                 </div>
                             </div>
-                            <Button title={'Delete todo'} handleBtnClick={() => handleClick(list.id)}/>
+                            <Button title='Delete todo' onClick={() => deleteClick(list.id)}/>
                         </div>
                     )
-                }):
-                <>
-                {
-                    <div className="mt-4 mb-4">
-                    <h4>To do list is empty please click on refresh button to reload</h4>
-                    <Button handleBtnClick={handleRefreshClick} title={'Refresh'}/>
-                    </div>
-                }
-                </>
+                })
             }
         </div>
     );
