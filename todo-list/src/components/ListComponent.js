@@ -1,7 +1,7 @@
 import Button from "./Button";
 
 const ListComponent = (props) => {
-    const {todolist, header, deleteClick} = props
+    const {todolist, header, onDeleteClick} = props
     return ( 
         <div>
             <h1 className="pb-2 mt-4">{header}</h1>
@@ -23,7 +23,7 @@ const ListComponent = (props) => {
                                     <p className="ps-1">{list.description}</p>
                                 </div>
                             </div>
-                            <Button title='Delete todo' onClick={() => deleteClick(list.id)}/>
+                            <Button title='Delete todo' onClick={() => onDeleteClick(list.id)}/>
                         </div>
                     )
                 })
