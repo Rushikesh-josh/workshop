@@ -1,19 +1,19 @@
 import { useState } from 'react'
 import './App.css';
 import ListComponent from './components/ListComponent';
-import { Todos } from './constants/constants';
+import { todos } from './constants/constants';
 
 function App() {
-  const [ todos, setTodos] = useState(Todos)
+  const [ todo, setTodos] = useState(todos)
 
   const deleteClick = (id) =>{
-    const newTodos = todos.filter(list => list.id !== id)
+    const newTodos = todo.filter(list => list.id !== id)
     setTodos(newTodos)
   }
 
   return (
     <div className="App d-flex justify-content-center">
-      <ListComponent todolist={todos} header="Todo List" deleteClick={deleteClick} />
+      <ListComponent todolist={todo} header="Todo List" deleteClick={deleteClick} />
     </div>
   );
 }

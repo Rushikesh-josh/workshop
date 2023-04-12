@@ -1,4 +1,4 @@
-export const Todos = [
+export const todos = [
     {title:'Todo-1', description:'This is todo 1', id: 1},
     {title:'Todo-2', description:'This is todo 2', id: 2},
     {title:'Todo-3', description:'This is todo 3', id: 3},
