@@ -1,7 +1,18 @@
+import React from "react";
 import Button from "./Button";
 
-const ListComponent = (props) => {
-    const {todolist, header, onDeleteClick} = props
+type ListComponentType = {
+    todolist: {
+        title: string,
+        description: string,
+        id: number
+    }[],
+    header: string,
+    onDeleteClick: (id:number) => void,
+}
+
+const ListComponent = (props:ListComponentType) => {
+    const { todolist, header, onDeleteClick } = props;
     return ( 
         <div>
             <h1 className="pb-2 mt-4">{header}</h1>
